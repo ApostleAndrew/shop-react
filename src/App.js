@@ -8,6 +8,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <Test/>
+          
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -20,10 +22,37 @@ class App extends Component {
           >
             Learn React
           </a>
+          <Test1/>
+          <Test2/>
+        
         </header>
       </div>
     );
   }
+}
+
+function Test() {
+  return (
+  <div>
+    <h1> Test component </h1>
+    <p> dd </p>
+  </div>
+  )
+}
+
+const Test1 = () => 
+  <div>
+    <h1> Test component </h1>
+    <p> dddddddddd </p>
+  </div>
+
+const Test2 = () => {
+  return(
+    <div>
+      <h1> Test component3 </h1>
+      <p> dddd </p>
+    </div>
+  )
 }
 
 export default App;
