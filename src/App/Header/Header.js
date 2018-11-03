@@ -1,5 +1,9 @@
 import React from 'react'
 
+import Logo from './Logo/Logo'
+import Menu from './Menu/Menu'
+import Cart from './Cart/Cart'
+
 
 import './header.css'
 
@@ -10,25 +14,13 @@ const Header = () => {
 		<div className="container">
 			<div className="row">
 				<div className="col-lg-3">
-					<div className="logo">
-						<img src="img/logo.png" alt=""/>
-					</div>
+					<Logo/>
 				</div>
 				<div className="col-lg-6">
-					<div className="menu">
-						<ul>
-							<li><a href="">Home</a></li>
-							<li><a href="">Product</a></li>
-							<li><a href="">Payment</a></li>
-							<li><a href="">Shipping</a></li>
-						</ul>
-					</div>
+					<Menu/>
 				</div>
 				<div className="col-lg-3">
-					<div className="cart text-center">
-						<div className="products-count">0</div>
-						<div className="products-price">$500</div>
-					</div>
+					<Cart/> 
 				</div>
 			</div>
 		</div>

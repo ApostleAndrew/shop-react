@@ -2,9 +2,10 @@ import React from 'react'
 
 
 import Header from './Header/Header'
-import './menu.css'
-import './cart.css'
-import './base.css'
+
+
+import '../common/style/base.css'
+import '../common/style/reset.css'
 
 const App = () => {
 	return (
