@@ -1,20 +1,8 @@
 import React from 'react'
-import './reset.css'
-import './menu.css'
+
+
 import './header.css'
-import './cart.css'
-import './base.css'
 
-const App = () => {
-	return (
-		<div className="App">
-			<Header />
-			<Main />
-			<Footer />
-		</div>
-
-	)
-}
 
 const Header = () => {
 	return(
@@ -48,32 +36,5 @@ const Header = () => {
 	)
 }
 
-const Main = () => {
-	return(
-		<main className="main">
-		<div className="container">
-			<div className="row">
-				<div className="col-lg-3">
-					
-				</div>
-				<div className="col-lg-9">
-					
-				</div>
-			</div>
-		</div>
-	</main>
-	)
-}
 
-const Footer = () => {
-	return(
-		<footer className="footer">
-		
-		</footer>
-	)
-}
-
-export default App
-
-
-
+export default Header
