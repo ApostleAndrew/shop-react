@@ -10,7 +10,7 @@ const Main = () => {
 		<div className="container">
 			<div className="row">
 				<div className="col-lg-3">
-					Filterr,,
+				dthftthjf
 				</div>
 				<div className="col-lg-9">
 					<ProductsList/>
