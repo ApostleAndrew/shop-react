@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import './ProductsListItem.css'
 
 const ProductsListItem = ({
@@ -26,5 +26,11 @@ const ProductsListItem = ({
     )
 }
 
+
+ ProductsListItem.propTypes = {
+     name: PropTypes.string,
+     price:PropTypes.number, 
+
+ }
 
 export default ProductsListItem
