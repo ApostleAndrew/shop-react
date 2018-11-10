@@ -11,14 +11,20 @@ const ProductsList = () => {
             <h2>ProductsList</h2>
             <div className='row'>
                 {
-                    products.map((product) => (
+                    products.map(({
+                        name,
+                        description,
+                        type,
+                        capacity,
+                        price,
+                    }) => (
                         <div className="col-lg-6">
                         <ProductsListItem
-                            name={product.name}
-                            deccription={product.description}
-                            type={product.type}
-                            capacity={product.capacity}
-                            price={product.price}
+                            name={name}
+                            deccription={description}
+                            type={type}
+                            capacity={capacity}
+                            price={price}
                         />
                             
                         </div>
