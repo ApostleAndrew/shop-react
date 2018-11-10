@@ -12,13 +12,14 @@ const ProductsList = () => {
             <div className='row'>
                 {
                     products.map(({
+                        id,
                         name,
                         description,
                         type,
                         capacity,
                         price,
                     }) => (
-                        <div className="col-lg-6">
+                        <div className="col-lg-6" key={id}>
                         <ProductsListItem
                             name={name}
                             deccription={description}

@@ -11,7 +11,7 @@ import '../common/style/reset.css'
 
 const App = () => {
 	return (
-		<div ClassName = 'App'>
+		<div className = 'App'>
 			<Header/>
 			<Main/>
 			<Footer/>
