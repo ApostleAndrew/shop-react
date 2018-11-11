@@ -29,8 +29,11 @@ const ProductsListItem = ({
 
  ProductsListItem.propTypes = {
      name: PropTypes.string,
-     price:PropTypes.number, 
-
+     description: PropTypes.string,
+     type: PropTypes.string,
+     capacity: PropTypes.number,
+     price:PropTypes.number,
+     
  }
 
 export default ProductsListItem
