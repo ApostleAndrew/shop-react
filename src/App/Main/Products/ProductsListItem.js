@@ -12,6 +12,10 @@ class ProductsListItem extends Component {
         price:PropTypes.number.isRequired,
 
     }
+
+    state = {
+        productsCount: 1,
+    }
     render(){
 
         const {
@@ -32,7 +36,7 @@ class ProductsListItem extends Component {
                 <div className='product-capacity'> Capacity:{capacity} Gb</div>
                 <div className='poduct-quantity'>
                     <button>-</button>
-                    <input type='text' value={1} readOnly/>
+                    <input type='text' value={this.state.productsCount} readOnly/>
                     <button>+</button>
                 </div>
                 <div className='product-price'> $ {price}</div>
