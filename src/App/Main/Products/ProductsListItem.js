@@ -26,7 +26,7 @@ class ProductsListItem extends Component {
             productsCount:prevState.productsCount - 1
         }))
     }
-    renderProductCount = () => {
+    renderProductCount() {
         return(
             <div className='poduct-quantity'>
             <button 
