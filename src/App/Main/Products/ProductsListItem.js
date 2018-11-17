@@ -14,7 +14,7 @@ class ProductsListItem extends Component {
     }
 
     state = {
-        productsCount: 1,
+        productsCount: 0,
     }
     onIncrementClick () {
         this.setState((prevState)=>({
@@ -47,9 +47,15 @@ class ProductsListItem extends Component {
                 <div className='product-type'>Type: {type}</div>
                 <div className='product-capacity'> Capacity:{capacity} Gb</div>
                 <div className='poduct-quantity'>
-                    <button onClick={()=> this.onDecrementClick()}>-</button>
+                    <button 
+                        onClick={()=> this.onDecrementClick()}
+                        disabled={this.state.productsCount <= 0}
+                    >-</button>
                     <input type='text' value={this.state.productsCount} readOnly/>
-                    <button onClick={()=>this.onIncrementClick()}>+</button>
+                    <button 
+                        onClick={()=>this.onIncrementClick()}
+                        disabled={this.state.productsCount >= 10}
+                    >+</button>
                 </div>
                 <div className='product-price'> $ {price}</div>
                 <button className='btn-add-to-cart'>Add to cart</button>
