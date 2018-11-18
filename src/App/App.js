@@ -10,6 +10,12 @@ import '../common/style/base.css'
 import '../common/style/reset.css'
 
 class App extends Component {
+	state = {
+		cartData : {
+			productsCount: 0,
+			total: 0,
+		}
+	}
 	render() {
 		return (
 			<div className = 'App'>
