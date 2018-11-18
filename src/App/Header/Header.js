@@ -8,7 +8,9 @@ import Cart from './Cart/Cart'
 import './header.css'
 
 
-const Header = () => {
+const Header = ({
+	cartData
+}) => {
 	return(
 		<header className="header">
 		<div className="container">
@@ -20,7 +22,10 @@ const Header = () => {
 					<Menu/>
 				</div>
 				<div className="col-lg-3">
-					<Cart/> 
+					<Cart
+					totalproductsCount = {cartData.totalproductsCount}
+					totalPrice = {cartData.totalPrice}
+					/> 
 				</div>
 			</div>
 		</div>

@@ -2,11 +2,15 @@ import React from 'react'
 
 import './cart.css'
 
-const Cart = () => {
+const Cart = ({
+	totalproductsCount,
+	totalPrice,
+}) => {
 	return(	
+
         <div className="cart text-center">
-			<div className="products-count">0</div>
-			<div className="products-price">$500</div>
+			<div className="products-count">{totalproductsCount}</div>
+			<div className="products-price">{totalPrice}</div>
 		</div>
 	)
 }

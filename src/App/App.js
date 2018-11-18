@@ -12,14 +12,17 @@ import '../common/style/reset.css'
 class App extends Component {
 	state = {
 		cartData : {
-			productsCount: 0,
-			total: 0,
+			totalproductsCount: 10,
+			totalPrice: 0,
 		}
 	}
 	render() {
+			
 		return (
 			<div className = 'App'>
-				<Header/>
+				<Header
+					cartData={this.state.cartData}
+				/>
 				<Main/>
 				<Footer/>
 			</div>
