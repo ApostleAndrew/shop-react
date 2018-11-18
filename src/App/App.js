@@ -16,13 +16,24 @@ class App extends Component {
 			totalPrice: 0,
 		}
 	}
-	render() {
+	addProductToCart(price,count) {
+		this.setState((prevState) => ({
+			cartData: {
+				totalPrice: prevState.cartData.totalPrice + (price*count),
+				totalproductsCount: prevState.cartData.totalproductsCount + count,
+			}
+		}))
+	} 
+
+	
+	render () {
 			
 		return (
 			<div className = 'App'>
 				<Header
 					cartData={this.state.cartData}
 				/>
+				<button onClick={() => this.addProductToCart(10,20)}>add Product</button>
 				<Main/>
 				<Footer/>
 			</div>

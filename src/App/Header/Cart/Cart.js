@@ -10,7 +10,7 @@ const Cart = ({
 
         <div className="cart text-center">
 			<div className="products-count">{totalproductsCount}</div>
-			<div className="products-price">{totalPrice}</div>
+			<div className="products-price">${totalPrice}</div>
 		</div>
 	)
 }
