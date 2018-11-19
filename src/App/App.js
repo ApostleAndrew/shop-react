@@ -12,11 +12,11 @@ import '../common/style/reset.css'
 class App extends Component {
 	state = {
 		cartData : {
-			totalproductsCount: 10,
+			totalproductsCount: 0,
 			totalPrice: 0,
 		}
 	}
-	addProductToCart(price,count) {
+	addProductToCart = (price,count) => {
 		this.setState((prevState) => ({
 			cartData: {
 				totalPrice: prevState.cartData.totalPrice + (price*count),
@@ -33,8 +33,9 @@ class App extends Component {
 				<Header
 					cartData={this.state.cartData}
 				/>
-				<button onClick={() => this.addProductToCart(10,20)}>add Product</button>
-				<Main/>
+				<Main
+					addProductToCart = {this.addProductToCart}
+				/>
 				<Footer/>
 			</div>
 		)

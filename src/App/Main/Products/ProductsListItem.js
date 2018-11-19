@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import './ProductsListItem.css'
 
+
 class ProductsListItem extends Component {
 
     static propTypes = {
@@ -42,7 +43,6 @@ class ProductsListItem extends Component {
         )
     }
 
-
     render(){
 
         const {
@@ -52,6 +52,7 @@ class ProductsListItem extends Component {
             capacity,
             price,
             image,
+            addProductToCart,
         } = this.props
         
         return (
@@ -63,7 +64,7 @@ class ProductsListItem extends Component {
                 <div className='product-capacity'> Capacity:{capacity} Gb</div>
                 {this.renderProductCount()}
                 <div className='product-price'> $ {price}</div>
-                <button className='btn-add-to-cart'>Add to cart</button>
+                <button onClick={() => addProductToCart(price, this.state.productsCount )} className='btn-add-to-cart'>Add to cart</button>
             </div>
         )
     }
