@@ -10,8 +10,11 @@ class ProductsListItem extends Component {
         type: PropTypes.string,
         capacity: PropTypes.number,
         price:PropTypes.number.isRequired,
-
     }
+
+    // static defaultProps = {
+    //     description:"NO desc..."
+    // }
     render(){
 
         const {
