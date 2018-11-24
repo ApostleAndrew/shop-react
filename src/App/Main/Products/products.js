@@ -36,6 +36,7 @@ const products = [
         image:"/images/products/ipad.png",
     },
     
+    
 ]
 
 export default products

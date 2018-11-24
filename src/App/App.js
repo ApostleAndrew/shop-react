@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 
 import Header from './Header/Header'
@@ -9,15 +9,37 @@ import Footer from './Footer/Footer'
 import '../common/style/base.css'
 import '../common/style/reset.css'
 
-const App = () => {
-	return (
-		<div className = 'App'>
-			<Header/>
-			<Main/>
-			<Footer/>
-		</div>
+class App extends Component {
+	state = {
+		productsInCart: {
+			'2': 5,
+			'3': 4,
+		}
+	}
+	addProductToCart = (price,count) => {
+		// this.setState((prevState) => ({
+		// 	cartData: {
+		// 		totalPrice: prevState.cartData.totalPrice + (price*count),
+		// 		totalproductsCount: prevState.cartData.totalproductsCount + count,
+		// 	}
+		// }))
+	} 
 
-	)
+	
+	render () {
+			
+		return (
+			<div className = 'App'>
+				<Header
+					productsInCart={this.state.productsInCart}
+				/>
+				<Main
+					addProductToCart = {this.addProductToCart}
+				/>
+				<Footer/>
+			</div>
+		)
+	}
 }
 
 

@@ -1,12 +1,23 @@
 import React from 'react'
+import {keys} from 'lodash'
 
 import './cart.css'
 
-const Cart = () => {
+const Cart = ({
+	productsInCart,
+}) => {
 	return(	
+
         <div className="cart text-center">
-			<div className="products-count">0</div>
-			<div className="products-price">$500</div>
+			{
+				keys(productsInCart).map((productId)=>(
+					<div>
+						<span>{productId}</span>: {productsInCart[productId]}
+					</div>
+				))
+			// <div className="products-count"></div>
+			// <div className="products-price">$</div>
+			}
 		</div>
 	)
 }
