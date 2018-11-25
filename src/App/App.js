@@ -12,8 +12,7 @@ import '../common/style/reset.css'
 class App extends Component {
 	state = {
 		productsInCart: {
-			'2': 5,
-			'3': 4,
+			
 		}
 	}
 	addProductToCart = (productId,count) => {
