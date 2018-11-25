@@ -18,7 +18,7 @@ const Cart = ({
 			{
 				keys(productsInCart).map((productId)=>(
 					<div key={productId}>
-						<span>{productId}</span>: {productsInCart[productId]}
+						<span>{productsMap[productId].name}</span>: {productsInCart[productId]}
 					</div>
 				))
 			}
