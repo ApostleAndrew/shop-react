@@ -3,8 +3,12 @@ import {keys} from 'lodash'
 import products from './../../Main/Products/products'
 import './cart.css'
 
-
+const productsMap = products.reduce((map, product)=>({
+	...map,
+	[product.id]:product,
+}),{}) 
 console.log(products)
+console.log(productsMap)
 const Cart = ({
 	productsInCart,
 }) => {
