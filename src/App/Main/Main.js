@@ -4,6 +4,8 @@ import ProductsList from './Products/ProductsList'
 import {Route} from 'react-router-dom'
 
 import CartPage from './Cart/CartPage'
+import PaymentPage from './Payment/PaymentPage'
+import ShippingPage from './Shipping/ShipingPage'
 
 const Main = ({
 	addProductToCart,
@@ -17,6 +19,8 @@ const Main = ({
 				</div>
 				<div className="col-lg-9">
 				<Route path='/cart' component = {CartPage} />
+				<Route path='/shipping' component = {ShippingPage} />
+				<Route path='/payment' component ={PaymentPage} />
 					<ProductsList
 					addProductToCart={addProductToCart} 
 					/>
