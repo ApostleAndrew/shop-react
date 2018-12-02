@@ -12,6 +12,7 @@ const CartPage = ({
 }) => {
 	return(	
         <div className="cart text-center">
+		<h1>Cart Page</h1>
 			{
 			keys(productsInCart).map((productId)=>(
 				<div key={productId}>

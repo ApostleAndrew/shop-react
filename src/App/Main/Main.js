@@ -27,7 +27,7 @@ const Main = ({
 						/>)
 				}}/>
 				<Route path="/cart" render = {() => {
-							return ( 
+						return ( 
 							<CartPage 
 							productsInCart={productsInCart}
 							/>)
