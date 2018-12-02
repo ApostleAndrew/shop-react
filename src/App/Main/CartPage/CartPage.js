@@ -1,14 +1,12 @@
 import React from 'react'
 import {keys} from 'lodash'
-import products from './../Products/products'
+import products, {getProductsMap} from './../Products/products'
 import {Link} from 'react-router-dom'
-const productsMap = products.reduce((map,product)=>({
-	...map,
-	[product.id]:product,
-}),{})
+
 
 const CartPage = ({
 	productsInCart,
+	productsMap = getProductsMap(products),
 }) => {
 	return(	
         <div className="cart text-center">
