@@ -2,6 +2,8 @@ import React from 'react'
 import {keys} from 'lodash'
 import products, {getProductsMap} from './../Products/products'
 import {Link} from 'react-router-dom'
+import CartTotal from '../../../common/features/Cart/CartTotal'
+
 
 
 const CartPage = ({
@@ -19,11 +21,9 @@ const CartPage = ({
 			))
 			}
 			<div>
-			Total: $ {
-				keys(productsInCart).reduce((total, product)=>{
-					return total + (productsMap[product].price * productsInCart[product])
-				}, 0)
-					}
+			<CartTotal
+			productsInCart={productsInCart}
+			/>
 			</div>
 			<Link to='/buy'> Buy </Link>	
 		</div>
