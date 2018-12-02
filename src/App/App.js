@@ -41,6 +41,7 @@ class App extends Component {
 				/>
 				<Main
 					addProductToCart = {this.addProductToCart}
+					productsInCart = {this.state.productsInCart}
 				/>
 				<Footer/>
 			</div>

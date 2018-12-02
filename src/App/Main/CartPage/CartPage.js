@@ -1,16 +1,13 @@
 import React from 'react'
 import {keys} from 'lodash'
+import products from './../Products/products'
 import {Link} from 'react-router-dom'
-import products from './../../Main/Products/products'
-import './cart.css'
-
-const productsMap = products.reduce((map, product)=>({
+const productsMap = products.reduce((map,product)=>({
 	...map,
 	[product.id]:product,
-}),{}) 
+}),{})
 
-
-const Cart = ({
+const CartPage = ({
 	productsInCart,
 }) => {
 	return(	
@@ -29,10 +26,13 @@ const Cart = ({
 				}, 0)
 					}
 			</div>
-				<Link to='/cart'> Show cart </Link>	
+			<Link to='/buy'> Buy </Link>	
 		</div>
 	)
 }
+	
 
 
-export default Cart
+
+
+export default CartPage

@@ -3,12 +3,14 @@ import React from 'react'
 import ProductsList from './Products/ProductsList'
 import {Route} from 'react-router-dom'
 
-import CartPage from './Cart/CartPage'
+import CartPage from './CartPage/CartPage'
 import PaymentPage from './Payment/PaymentPage'
 import ShippingPage from './Shipping/ShipingPage'
 
 const Main = ({
 	addProductToCart,
+	productsInCart
+	
 }) => {
 	return(	
     <main className="main">
@@ -22,15 +24,16 @@ const Main = ({
 					return (
 						<ProductsList
 						addProductToCart={addProductToCart} 
-						/>
-					)
+						/>)
 				}}/>
-				<Route path='/cart' component = {CartPage} />
+				<Route path="/cart" render = {() => {
+							return ( 
+							<CartPage 
+							productsInCart={productsInCart}
+							/>)
+				}}/>
 				<Route path='/shipping' component = {ShippingPage} />
 				<Route path='/payment' component ={PaymentPage} />
-					{/* <ProductsList
-					addProductToCart={addProductToCart} 
-					/> */}
 				</div>
 			</div>
 		</div>
