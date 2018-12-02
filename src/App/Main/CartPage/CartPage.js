@@ -1,5 +1,4 @@
 import React from 'react'
-import products, {getProductsMap} from './../Products/products'
 import {Link} from 'react-router-dom'
 import CartTotal from '../../../common/features/Cart/CartTotal'
 import CartProductList from '../../../common/features/Cart/CartProductList';
@@ -8,7 +7,6 @@ import CartProductList from '../../../common/features/Cart/CartProductList';
 
 const CartPage = ({
 	productsInCart,
-	productsMap = getProductsMap(products),
 }) => {
 	return(	
         <div className="cart text-center">
