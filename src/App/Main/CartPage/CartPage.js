@@ -1,8 +1,8 @@
 import React from 'react'
-import {keys} from 'lodash'
 import products, {getProductsMap} from './../Products/products'
 import {Link} from 'react-router-dom'
 import CartTotal from '../../../common/features/Cart/CartTotal'
+import CartProductList from '../../../common/features/Cart/CartProductList';
 
 
 
@@ -13,17 +13,13 @@ const CartPage = ({
 	return(	
         <div className="cart text-center">
 		<h1>Cart Page</h1>
-			{
-			keys(productsInCart).map((productId)=>(
-				<div key={productId}>
-					<span>{productsMap[productId].name}</span>: {productsInCart[productId]}	
-				</div>
-			))
-			}
+				<CartProductList
+				productsInCart={productsInCart}
+				/>
 			<div>
-			<CartTotal
-			productsInCart={productsInCart}
-			/>
+				<CartTotal
+				productsInCart={productsInCart}
+				/>
 			</div>
 			<Link to='/buy'> Buy </Link>	
 		</div>
