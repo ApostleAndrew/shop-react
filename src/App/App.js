@@ -25,11 +25,19 @@ class App extends Component {
 			}
 		}))
 	}
-		removeProductFromCart = (productId) => {
-			this.setState((prevState) => ({
-					productsInCart: omit(prevState.productsInCart,productId)
-				})	
-			)} 
+	removeProductFromCart = (productId) => {
+		this.setState((prevState) => ({
+				productsInCart: omit(prevState.productsInCart,productId)
+			})	
+		)} 
+	setProductQantity = (productId, quantity) => {
+		this.setState ((prevState) => ({
+			productsInCart: {
+				...prevState.productsInCart,
+				[productId]:quantity,
+			}
+		}))
+	}
 
 	
 	render () {
@@ -43,6 +51,7 @@ class App extends Component {
 					addProductToCart = {this.addProductToCart}
 					productsInCart = {this.state.productsInCart}
 					removeProductFromCart = {this.removeProductFromCart}
+					setProductQantity={this.setProductQantity}
 				/>
 				<Footer/>
 				

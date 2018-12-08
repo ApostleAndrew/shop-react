@@ -9,6 +9,7 @@ import CartProductListItemExtended from '../../../common/features/Cart/CartProdu
 const CartPage = ({
 	productsInCart,
 	removeProductFromCart,
+	setProductQantity,
 }) => {
 	return(	
         <div className="cart text-center">
@@ -16,6 +17,7 @@ const CartPage = ({
 			<CartProductList 
 				CartListComponent={CartProductListItemExtended}
 				removeProductFromCart={removeProductFromCart} 
+				setProductQantity={setProductQantity}
 				productsInCart={productsInCart}/>
 			<CartTotal productsInCart={productsInCart}/>
 			<Link to='/buy'> Buy </Link>	

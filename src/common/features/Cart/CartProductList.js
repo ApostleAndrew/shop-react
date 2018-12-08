@@ -8,6 +8,7 @@ const CartProductList = ({
 	productsInCart,
 	CartListComponent = CartProductListItem,
 	removeProductFromCart,
+	setProductQantity,
 }) => {
     return(
         <div>
@@ -15,6 +16,7 @@ const CartProductList = ({
 			keys(productsInCart).map((productId)=>(
 				<CartListComponent
 					removeProductFromCart={removeProductFromCart} 
+					setProductQantity={setProductQantity}
 					key ={productId}
 					product = {productsMap[productId]}
 					count = {productsInCart[productId]}

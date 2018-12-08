@@ -11,6 +11,7 @@ const Main = ({
 	addProductToCart,
 	productsInCart,
 	removeProductFromCart,
+	setProductQantity,
 	
 }) => {
 	return(	
@@ -33,6 +34,7 @@ const Main = ({
 							<CartPage 
 							productsInCart={productsInCart}
 							removeProductFromCart={removeProductFromCart} 
+							setProductQantity={setProductQantity}
 							/>)
 				}}/>
 				<Route path='/shipping' component = {ShippingPage} />
