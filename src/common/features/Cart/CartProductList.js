@@ -7,12 +7,14 @@ const CartProductList = ({
     productsMap = getProductsMap(products),
 	productsInCart,
 	CartListComponent = CartProductListItem,
+	removeProductFromCart,
 }) => {
     return(
         <div>
 			{
 			keys(productsInCart).map((productId)=>(
 				<CartListComponent
+					removeProductFromCart={removeProductFromCart} 
 					key ={productId}
 					product = {productsMap[productId]}
 					count = {productsInCart[productId]}

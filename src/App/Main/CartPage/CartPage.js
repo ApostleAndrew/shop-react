@@ -8,12 +8,14 @@ import CartProductListItemExtended from '../../../common/features/Cart/CartProdu
 
 const CartPage = ({
 	productsInCart,
+	removeProductFromCart,
 }) => {
 	return(	
         <div className="cart text-center">
 			<h1>Cart Page</h1>
 			<CartProductList 
 				CartListComponent={CartProductListItemExtended}
+				removeProductFromCart={removeProductFromCart} 
 				productsInCart={productsInCart}/>
 			<CartTotal productsInCart={productsInCart}/>
 			<Link to='/buy'> Buy </Link>	

@@ -12,7 +12,8 @@ import '../common/style/reset.css'
 class App extends Component {
 	state = {
 		productsInCart: {
-			
+			'2':4,
+			'4':2,
 		}
 	}
 	addProductToCart = (productId,count) => {
@@ -23,6 +24,16 @@ class App extends Component {
 
 			}
 		}))
+	}
+		removeProductFromCart = (productId) => {
+			this.setState((prevState) => {
+				const prevProductsInCart = {...prevState.productsInCart}
+				delete prevProductsInCart[productId]
+				return {
+					productsInCart:prevProductsInCart,
+				}	
+			})
+	
 		// this.setState((prevState) => ({
 		// 	cartData: {
 		// 		totalPrice: prevState.cartData.totalPrice + (price*count),
@@ -42,8 +53,10 @@ class App extends Component {
 				<Main
 					addProductToCart = {this.addProductToCart}
 					productsInCart = {this.state.productsInCart}
+					removeProductFromCart = {this.removeProductFromCart}
 				/>
 				<Footer/>
+				
 			</div>
 		)
 	}
