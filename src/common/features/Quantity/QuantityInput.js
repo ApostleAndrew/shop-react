@@ -10,7 +10,10 @@ const QuantityInput = ({
         <div className='poduct-quantity'>
             <button 
                 onClick={()=> onDecrementClick()}
-                disabled={productsCount <= 1}
+                disabled={productsCount <= 0 }
+                
+                
+                
             >-</button>
             <input type='text' value={productsCount} readOnly/>
             <button 

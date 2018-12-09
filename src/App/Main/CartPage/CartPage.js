@@ -18,7 +18,9 @@ const CartPage = ({
 				CartListComponent={CartProductListItemExtended}
 				removeProductFromCart={removeProductFromCart} 
 				setProductQantity={setProductQantity}
-				productsInCart={productsInCart}/>
+				productsInCart={productsInCart}
+				/>
+				
 			<CartTotal productsInCart={productsInCart}/>
 			<Link to='/buy'> Buy </Link>	
 		</div>

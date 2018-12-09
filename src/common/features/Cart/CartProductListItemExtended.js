@@ -8,6 +8,7 @@ const CartProductListItemExtended = ({
     count,
     removeProductFromCart,
     setProductQantity,
+
     
 }) => (
     <div>
