@@ -77,6 +77,12 @@ class ProductsListItem extends Component {
 
     }
 
+    const mapStateToProps = (state,props)=>{
+        return {
+            isLiked:state[props.id]
+        }
+    }
+
 
 
 
@@ -89,8 +95,4 @@ class ProductsListItem extends Component {
      description: "no desc.."
  }*/
 
-export default connect((state,props)=>{
-    return {
-        isLiked:state[props.id]
-    }
-})(ProductsListItem)
+export default connect(mapStateToProps)(ProductsListItem)
