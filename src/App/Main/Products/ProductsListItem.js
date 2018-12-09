@@ -8,6 +8,9 @@ import QuantityInput from '../../../common/features/Quantity/QuantityInput';
 
 
 class ProductsListItem extends Component {
+    static defaultProps = {
+        isLiked:false,
+    }
 
     static propTypes = {
         name: PropTypes.string.isRequired,
@@ -53,11 +56,14 @@ class ProductsListItem extends Component {
             image,
             addProductToCart,
             id,
+            isLiked
         } = this.props
         
         return (
             <div className='products-list-item'>
                 <div className='product-image'><img src={image} alt={name}/> </div>
+                {isLiked ? <button>&#9829;</button> : <button>&#9825;</button>}
+                
                 <div className='product-name'><Link to={`products/${id}`}>{name}</Link></div>
                 <div className='product-description'> {description}</div>
                 <div className='product-type'>Type: {type}</div>
