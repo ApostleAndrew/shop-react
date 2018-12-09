@@ -9,7 +9,10 @@ import productLikesReducer from './common/features/Like/productlikesreduser'
 
 
 
-const store = createStore(productLikesReducer)
+const store = createStore(
+    productLikesReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 ReactDOM.render(
     <Provider store={store}>
