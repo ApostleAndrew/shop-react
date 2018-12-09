@@ -83,8 +83,8 @@ class ProductsListItem extends Component {
      description: "no desc.."
  }*/
 
-export default connect((state)=>{
+export default connect((state,props)=>{
     return {
-        likedProuducts:state,
+        isLiked:state[props.id]
     }
 })(ProductsListItem)
