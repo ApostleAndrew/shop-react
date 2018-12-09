@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import './ProductsListItem.css'
 import QuantityInput from '../../../common/features/Quantity/QuantityInput';
 
@@ -82,4 +83,8 @@ class ProductsListItem extends Component {
      description: "no desc.."
  }*/
 
-export default ProductsListItem
+export default connect((state)=>{
+    return {
+        likedProuducts:state,
+    }
+})(ProductsListItem)
