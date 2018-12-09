@@ -1,11 +1,16 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import './ProductsListItem.css'
 import QuantityInput from '../../../common/features/Quantity/QuantityInput';
 
 
 
 class ProductsListItem extends Component {
+    static defaultProps = {
+        isLiked:false,
+    }
 
     static propTypes = {
         name: PropTypes.string.isRequired,
@@ -54,6 +59,7 @@ class ProductsListItem extends Component {
             image,
             addProductToCart,
             id,
+            isLiked
         } = this.props
         
         
@@ -62,7 +68,9 @@ class ProductsListItem extends Component {
         return (
             <div className='products-list-item'>
                 <div className='product-image'><img src={image} alt={name}/> </div>
-                <div className='product-name'> {name}</div>
+                {isLiked ? <button>&#9829;</button> : <button>&#9825;</button>}
+                
+                <div className='product-name'><Link to={`products/${id}`}>{name}</Link></div>
                 <div className='product-description'> {description}</div>
                 <div className='product-type'>Type: {type}</div>
                 <div className='product-capacity'> Capacity:{capacity} Gb</div>
@@ -73,6 +81,12 @@ class ProductsListItem extends Component {
         )
     }
 
+    }
+
+    const mapStateToProps = (state,props)=>{
+        return {
+            isLiked:state[props.id]
+        }
     }
 
 
@@ -87,4 +101,4 @@ class ProductsListItem extends Component {
      description: "no desc.."
  }*/
 
-export default ProductsListItem
+export default connect(mapStateToProps)(ProductsListItem)
