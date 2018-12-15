@@ -90,6 +90,17 @@ class ProductsListItem extends Component {
         }
     }
 
+    const mapDispatchToProps = (dispatch) => ({
+        dispatchLike: (id) => dispatch({
+            type: "LIKE",
+            id: id,
+        }),
+        dispatchDisLike: (id) => (dispatch) => ({
+            type: "DISLIKE",
+            id:id,
+        }),
+    })
+
 
 
 
