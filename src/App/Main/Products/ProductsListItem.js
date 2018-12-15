@@ -48,6 +48,13 @@ class ProductsListItem extends Component {
            
         )
     }
+    onLikeClick = () => {
+        if (this.props.isLiked){
+            this.props.dispatchDisLike(this.props.id)
+        } else {
+            this.props.dispatchLike(this.props.id)
+        }
+    }
 
     render(){
 
@@ -69,7 +76,10 @@ class ProductsListItem extends Component {
         return (
             <div className='products-list-item'>
                 <div className='product-image'><img src={image} alt={name}/> </div>
-                {isLiked ? <button>&#9829;</button> : <button>&#9825;</button>}
+                <button onClick={()=> this.onLikeClick()}>
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                </button>
+                
                 
                 <div className='product-name'><Link to={`products/${id}`}>{name}</Link></div>
                 <div className='product-description'> {description}</div>
@@ -95,7 +105,7 @@ class ProductsListItem extends Component {
             type: "LIKE",
             id: id,
         }),
-        dispatchDisLike: (id) => (dispatch) => ({
+        dispatchDisLike: (id) => dispatch({
             type: "DISLIKE",
             id:id,
         }),
@@ -113,4 +123,7 @@ class ProductsListItem extends Component {
      description: "no desc.."
  }*/
 
-export default connect(mapStateToProps)(ProductsListItem)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+    )(ProductsListItem)
