@@ -1,6 +1,7 @@
 import React from 'react'
 import './CartProductListItemExtended.css'
 import QuantityInput from '../Quantity/QuantityInput';
+import {connect} from 'react-redux'
 
 
 const CartProductListItemExtended = ({
@@ -9,6 +10,8 @@ const CartProductListItemExtended = ({
     removeProductFromCart,
     setProductQantity,
     minCount,
+    isLiked,
+
 
     
 }) => (
@@ -26,10 +29,15 @@ const CartProductListItemExtended = ({
                     <p className="cart-extended-price">
                          Price for one item: <span className="bold">$ {product.price} </span> 
                     </p>
+                    <button>
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                    </button>
                     <p className="cart-extended-count">
                          Selected quantity: <span className="bold"> {count} </span> 
                          
                     </p>
+    
+                    
                     <p className="cart-extended-sum">
                          Sum for this item: <span className="bold sum-price">$ {(product.price * count)} </span> 
                     </p>
@@ -51,5 +59,11 @@ const CartProductListItemExtended = ({
     </div>
 )
 
-export default CartProductListItemExtended
+const mapStateToProps = (state,props)=>{
+        return {
+            isLiked:state[props.product.id]
+        }
+    }
+
+export default connect(mapStateToProps) (CartProductListItemExtended)
 
