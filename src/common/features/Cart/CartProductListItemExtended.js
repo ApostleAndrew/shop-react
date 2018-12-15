@@ -8,6 +8,7 @@ const CartProductListItemExtended = ({
     count,
     removeProductFromCart,
     setProductQantity,
+    minCount,
 
     
 }) => (
@@ -33,6 +34,7 @@ const CartProductListItemExtended = ({
                          Sum for this item: <span className="bold sum-price">$ {(product.price * count)} </span> 
                     </p>
                     <QuantityInput
+                        minCount={0}
                         productsCount = {count}
                         onIncrementClick = {()=> setProductQantity(product.id, count + 1)}
                         onDecrementClick = {() => {
