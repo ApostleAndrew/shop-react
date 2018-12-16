@@ -96,7 +96,7 @@ class ProductsListItem extends Component {
 
     const mapStateToProps = (state,props)=>{
         return {
-            isLiked:state[props.id]
+            isLiked:state.likeProducts[props.id]
         }
     }
 

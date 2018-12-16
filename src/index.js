@@ -5,12 +5,12 @@ import {createStore} from 'redux'
 import App from './App/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
-import productLikesReducer from './common/features/Like/productlikesreduser'
+import rootReduser from './App/store/rootReduser'
 
 
 
 const store = createStore(
-    productLikesReducer,
+    rootReduser,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

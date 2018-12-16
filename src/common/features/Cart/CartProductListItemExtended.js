@@ -61,7 +61,7 @@ const CartProductListItemExtended = ({
 
 const mapStateToProps = (state,props)=>{
         return {
-            isLiked:state[props.product.id]
+            isLiked:state.likeProducts[props.product.id]
         }
     }
 
