@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import App from './App/App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import rootReduser from './App/store/rootReduser'
 
 
@@ -16,9 +16,9 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
             <App />
-        </BrowserRouter>
+        </HashRouter>
     </Provider>,document.getElementById('root'));
 
 
