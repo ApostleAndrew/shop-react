@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import './cart.css'
 import CartTotal from './../../../common/features/Cart/CartTotal'
 import CartProductList from '../../../common/features/Cart/CartProductList';
+import {connect} from 'react-redux'
 
 
 const Cart = ({
@@ -16,6 +17,10 @@ const Cart = ({
 		</div>
 	)
 }
+const mapStateToProps = (state)=>{
+	return {
+		productsInCart:state.productsInCart
+	}
+}
 
-
-export default Cart
+export default connect(mapStateToProps)(Cart)

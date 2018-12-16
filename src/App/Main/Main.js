@@ -10,7 +10,6 @@ import ProductPage from './Products/ProductPage';
 
 const Main = ({
 	addProductToCart,
-	productsInCart,
 	removeProductFromCart,
 	setProductQantity,
 	
@@ -33,7 +32,6 @@ const Main = ({
 				<Route path="/cart" render = {() => {
 						return ( 
 							<CartPage 
-							productsInCart={productsInCart}
 							removeProductFromCart={removeProductFromCart} 
 							setProductQantity={setProductQantity}
 							/>)

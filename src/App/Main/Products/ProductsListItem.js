@@ -109,6 +109,12 @@ class ProductsListItem extends Component {
             type: "DISLIKE",
             id:id,
         }),
+        addProductToCart: (id,count) => dispatch({
+            type:"ADD_PRODUCT_TO_CART",
+            id:id,
+            // or id,
+            count:count,
+        })
     })
 
 

@@ -64,6 +64,20 @@ const mapStateToProps = (state,props)=>{
             isLiked:state.likeProducts[props.product.id]
         }
     }
+const mapDispatchToProps = (dispath) => ({
+    removeProductFromCart:(id)=>dispath({
+        type:'REMOVE_PRODUCT_FROM_CART',
+        id:id,
+    }),
+    setProductQantity:(id,count)=>dispath({
+        type:'SET_PRODUCT_QUANTITY',
+        id:id,
+        count:count,
+    })
 
-export default connect(mapStateToProps) (CartProductListItemExtended)
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,) (CartProductListItemExtended)
 

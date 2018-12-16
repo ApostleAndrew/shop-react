@@ -10,10 +10,6 @@ import '../common/style/base.css'
 import '../common/style/reset.css'
 
 class App extends Component {
-	state = {
-		productsInCart: {
-		}
-	}
 	addProductToCart = (productId,count) => {
 		this.setState((prevState) => ({
 			productsInCart:{
@@ -42,12 +38,9 @@ class App extends Component {
 			
 		return (
 			<div className = 'App'>
-				<Header
-					productsInCart={this.state.productsInCart}
-				/>
+				<Header/>
 				<Main
 					addProductToCart = {this.addProductToCart}
-					productsInCart = {this.state.productsInCart}
 					removeProductFromCart = {this.removeProductFromCart}
 					setProductQantity={this.setProductQantity}
 				/>
