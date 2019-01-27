@@ -2,7 +2,8 @@
 	box-sizing: border-box;
 }
 body {
-	background-image: url(patt.png);
+	/* background-image: url(patt.png); */
+	background-color: rgb(65, 56, 99);
 }
 .container {
 	

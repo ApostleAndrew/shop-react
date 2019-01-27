@@ -10,7 +10,6 @@ import ProductPage from './Products/ProductPage';
 
 const Main = ({
 	addProductToCart,
-	productsInCart,
 	removeProductFromCart,
 	setProductQantity,
 	
@@ -23,21 +22,8 @@ const Main = ({
 				dthftthjf
 				</div>
 				<div className="col-lg-9">
-				<Route path='/' exact render = {() => {
-					return (
-						<ProductsList
-						addProductToCart={addProductToCart}
-						
-						/>)
-				}}/>
-				<Route path="/cart" render = {() => {
-						return ( 
-							<CartPage 
-							productsInCart={productsInCart}
-							removeProductFromCart={removeProductFromCart} 
-							setProductQantity={setProductQantity}
-							/>)
-				}}/>
+				<Route path='/' exact component={ProductsList}/>
+				<Route path="/cart" component={CartPage}/>
 				<Route path='/shipping' component = {ShippingPage} />
 				<Route path='/payment' component ={PaymentPage} />
 				<Route path='/products/:productId' component = {ProductPage}/>
